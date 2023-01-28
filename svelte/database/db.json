@@ -1,0 +1,31 @@
+{
+  "events": [
+    {
+      "id": "eff3359d",
+      "data": {
+        "id": "82d6b69f",
+        "title": "Todo 1"
+      },
+      "type": 0,
+      "createdAt": "2023-01-28T00:00:13.815Z"
+    },
+    {
+      "id": "bf3adfa4",
+      "data": {
+        "id": "a7d51934",
+        "title": "Todo 2"
+      },
+      "type": 0,
+      "createdAt": "2023-01-28T00:00:19.739Z"
+    },
+    {
+      "id": "463b9ebd",
+      "data": {
+        "id": "a7d51934",
+        "title": "Todo 2.2"
+      },
+      "type": 1,
+      "createdAt": "2023-01-28T00:00:24.001Z"
+    }
+  ]
+}
