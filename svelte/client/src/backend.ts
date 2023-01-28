@@ -14,48 +14,42 @@ export function getAllEvents() {
 }
 
 export function addTodoEventRequest(req: IAddTodoRequest) {
-    const request: ITodoEvent = {
+    const data = {
         id: createId(),
-        data: {
-            id: createId(),
-            title: req.todoTitle
-        } as ITodo,
-        type: eTodoEventType.Created,
-        createdAt: new Date()
-    }
-    return post(request);
+        title: req.todoTitle
+    } as ITodo;
+    
+    return post(data, eTodoEventType.Created);
 }
 
 export function editTodoEventRequest(req: IEditTodoRequest) {
-    const request: ITodoEvent = {
-        id: createId(),
-        data: {
-            id: req.todoId,
-            title: req.todoTitle
-        } as ITodo,
-        type: eTodoEventType.Modified,
-        createdAt: new Date()
-    }
-    return post(request);
+    const data = {
+        id: req.todoId,
+        title: req.todoTitle
+    } as ITodo;
+    
+    return post(data, eTodoEventType.Modified);
 }
 
 export function removeTodoEventRequest(req: IRemoveTodoRequest) {
-    const request: ITodoEvent = {
-        id: createId(),
-        data: { id: req.todoId } as ITodo,
-        type: eTodoEventType.Deleted,
-        createdAt: new Date()
-    }
-    return post(request);
+    const data = { id: req.todoId } as ITodo;
+    return post(data, eTodoEventType.Deleted);
 }
 
-function post(event: ITodoEvent) {
+function post(data: ITodo, type: eTodoEventType) {
     pageloaderOptions.set({ open: true });
     
+    const request: ITodoEvent = {
+        id: createId(),
+        data: data,
+        type: type,
+        createdAt: new Date()
+    }
+
     return fetch(url, {
         method: 'POST',
         headers: headersJson,
-        body: JSON.stringify(event)
+        body: JSON.stringify(request)
       }).then(r => {
         pageloaderOptions.set({ open: false })
         return r.json();

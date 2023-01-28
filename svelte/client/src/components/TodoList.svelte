@@ -70,6 +70,7 @@
         justify-content: space-between;
         grid-template-columns: repeat(auto-fill, 14rem);
         gap: .5rem;
+        grid-row-gap: 1rem;
         grid-auto-rows: 1fr;
     }
 
