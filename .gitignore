@@ -7,6 +7,7 @@
 /bazel-out
 
 # Node
+*node_modules/
 database/node_modules
 todo-client/node_modules
 todo-client/.angular
