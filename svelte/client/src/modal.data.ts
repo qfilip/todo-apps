@@ -7,3 +7,9 @@ export interface IModalOptions {
     name: ModalName;
     data: ITodo;
 }
+
+export interface IPageloaderOptions {
+    open: boolean;
+    message?: string;
+    progress?: number;
+}

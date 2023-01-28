@@ -1,9 +1,11 @@
 <script lang="ts">
     import TodoList from './components/TodoList.svelte';
     import ModalContainer from './components/ModalContainer.svelte';
+    import Pageloader from './components/Pageloader.svelte';
 </script>
 
 <main>
+    <Pageloader />
     <ModalContainer />
 	<h1 class="no-select">Todos</h1>
     <TodoList />

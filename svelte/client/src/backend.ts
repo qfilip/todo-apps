@@ -1,10 +1,16 @@
 import { eTodoEventType, IAddTodoRequest, IEditTodoRequest, IRemoveTodoRequest, ITodo, ITodoEvent } from "./models";
+import { pageloaderOptions } from './stores';
 
 const url = `http://localhost:5000/events`;
 const headersJson = { 'Content-Type': 'application/json' };
 
 export function getAllEvents() {
-    return fetch(url).then(r => r.json()) as Promise<ITodoEvent[]>;
+    pageloaderOptions.set({ open: true });
+
+    return fetch(url).then(r => {
+        pageloaderOptions.set({ open: false });
+        return r.json();
+    }) as Promise<ITodoEvent[]>;
 }
 
 export function addTodoEventRequest(req: IAddTodoRequest) {
@@ -37,18 +43,23 @@ export function removeTodoEventRequest(req: IRemoveTodoRequest) {
     const request: ITodoEvent = {
         id: createId(),
         data: { id: req.todoId } as ITodo,
-        type: eTodoEventType.Modified,
+        type: eTodoEventType.Deleted,
         createdAt: new Date()
     }
     return post(request);
 }
 
 function post(event: ITodoEvent) {
+    pageloaderOptions.set({ open: true });
+    
     return fetch(url, {
         method: 'POST',
         headers: headersJson,
         body: JSON.stringify(event)
-      }).then(r => r.json()) as Promise<ITodoEvent>;
+      }).then(r => {
+        pageloaderOptions.set({ open: false })
+        return r.json();
+      }) as Promise<ITodoEvent>;
 }
 
 function createId() {

@@ -1,3 +1,21 @@
 {
-	"todos": []
+  "events": [
+    {
+      "id": "86315e0c",
+      "data": {
+        "id": "ffb1e07e",
+        "title": "Todo 1"
+      },
+      "type": 0,
+      "createdAt": "2023-01-28T01:03:22.352Z"
+    },
+    {
+      "id": "a78ce7bc",
+      "data": {
+        "id": "ffb1e07e"
+      },
+      "type": 2,
+      "createdAt": "2023-01-28T01:03:23.526Z"
+    }
+  ]
 }
