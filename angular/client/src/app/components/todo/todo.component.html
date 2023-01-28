@@ -1,0 +1,19 @@
+<div
+    class="todo-wrapper w3-topbar w3-bottombar"
+    [ngClass]="{
+        'w3-border-green': (todoExpiration === _eTodoExpiration.NotExpired),
+        'w3-border-orange': (todoExpiration === _eTodoExpiration.ExpiresToday),
+        'w3-border-red': (todoExpiration === _eTodoExpiration.Expired)
+    }">
+    
+    <div class="todo-actions-wrapper">
+        <button (click)="viewHistory()" class="btn btn-blue">View history</button>
+        <button (click)="edit()" class="btn btn-orange">Edit</button>
+        <button (click)="delete()" class="btn btn-red">Delete</button>
+    </div>
+    <div class="todo-details-wrapper">
+        <h4 class="no-margin">{{ todo.title }}</h4>
+        <article>{{ todo.details }}</article>
+        <time>{{ todo.dueDate | formatDate }}</time>
+    </div>
+</div>

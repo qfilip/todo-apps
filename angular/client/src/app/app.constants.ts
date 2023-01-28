@@ -1,0 +1,1 @@
+export const DbUrl = 'http://localhost:5000';

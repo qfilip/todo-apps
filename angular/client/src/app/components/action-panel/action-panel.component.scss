@@ -1,0 +1,54 @@
+.action-panel {
+    box-shadow: 0px 2px 5px black;
+    min-height: 28rem;
+    max-height: 28rem;
+}
+
+.action-button-list > button {
+    font-size: .8rem;
+    margin-bottom: 2px;
+}
+
+.vertical-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-list {
+    display: inline-block;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    min-height: 6rem;
+    max-height: 6rem;
+    overflow-y: auto;
+    & > * {
+        font-size: .8rem;
+    }
+
+    & > div {
+        padding-left: 1rem;
+        display: inline-block;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.commit-list {
+    max-height: 5rem;
+    overflow-y: auto;
+}
+
+.commit-info {
+    padding: 0px 5px;
+    width: 50%;
+}
+
+button {
+    margin-bottom: 5px;
+    width: 10rem;
+}

@@ -1,0 +1,18 @@
+<div *ngIf="isVisible" class="dialog-wrapper">
+    <div class="dialog-wrapper-content">
+        <div class="dialog-wrapper-header">
+            <h3>{{ options.header }}</h3>
+        </div>
+        <div class="dialog-wrapper-body">
+            {{ options.message }}
+        </div>
+        <div class="dialog-wrapper-footer">
+            <button (click)="close(true)" class="dialog-btn btn btn-orange">
+                {{ options.okLabel }}
+            </button>
+            <button *ngIf="!options.cancelHidden" (click)="close(false)" class="dialog-btn btn btn-orange">
+                {{ options.cancelLabel }}
+            </button>
+        </div>
+    </div>
+</div>

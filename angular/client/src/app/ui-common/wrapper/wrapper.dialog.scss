@@ -1,0 +1,41 @@
+.dialog-wrapper {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #00000044;
+}
+
+.dialog-wrapper-content {
+    background: #fff;
+    width: 75%;
+    border: 3px solid black;
+}
+
+.dialog-wrapper-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+    color: white;
+    & > h3 {
+        margin: 0px 10px;
+    }
+}
+
+.dialog-wrapper-body {
+    margin: 10px 10px;
+}
+
+.dialog-wrapper-footer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}

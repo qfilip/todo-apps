@@ -1,0 +1,37 @@
+<app-wrapper-dialog #dialogWrapper title="Pull">
+    <div body *ngIf="dialogWrapper.isVisible" class="pull-dialog-body">
+        <div class="w3-row">
+
+            <div class="w3-col l2 m2">
+                <h4 class="no-margin">Merge from</h4>
+                <hr />
+                <select *ngIf="branches" (change)="setSelectedBranch($event)">
+                    <option *ngFor="let branch of branches" [value]="branch.id" [selected]="branch.id === selectedBranch.id">
+                        {{ branch.name }}
+                    </option>
+                </select>
+                <div>
+                    <button (click)="pull()" class="btn btn-orange">Merge</button>
+                </div>
+            </div>
+
+            <div class="w3-col l7 m7">
+                <div class="row">
+                    <div class="w3-half">
+                        <div *ngFor="let diff of diffs.related">
+                            <app-todo-state-preview [preview]="diff.remote"></app-todo-state-preview>
+                        </div>
+                    </div>
+                    <div class="w3-half">
+                        <div *ngFor="let diff of diffs.related">
+                            <app-todo-state-preview [preview]="diff.local"></app-todo-state-preview>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div footer>
+        <button (click)="dialogWrapper.close()" class="btn btn-orange">Cancel</button>
+    </div>
+</app-wrapper-dialog>

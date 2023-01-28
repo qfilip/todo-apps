@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+html{
+    height: 100%;
+  }
+  body {
+    min-height: 100%;
+  }
+
+.btn {
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+        background: black;
+    }
+}
+
+.btn-blue {
+    border-bottom: 4px solid lightblue;
+    &:hover {
+        color: lightblue;
+    }
+}
+
+.btn-green {
+    border-bottom: 4px solid lime;
+    &:hover {
+        color: lime;
+    }
+}
+
+.btn-orange {
+    border-bottom: 4px solid orange;
+    &:hover {
+        color: orange;
+    }
+}
+
+.btn-red {
+    border-bottom: 4px solid red;
+    &:hover {
+        color: red;
+    }
+}
+
+.btn-red-2 {
+    border-bottom: 4px solid red;
+    color: red;
+}
+
+.btn-grey {
+    border-bottom: 4px solid grey;
+    &:hover {
+        color: grey;
+    }
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.no-margin {
+    margin: 0;
+}

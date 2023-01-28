@@ -1,0 +1,15 @@
+<div *ngIf="isVisible" class="dialog-wrapper">
+    <div class="dialog-wrapper-content">
+        <div class="dialog-wrapper-header">
+            <h3>{{ title }}</h3>
+            <button (click)="close()" class="btn btn-red-2">X</button>
+        </div>
+        <div class="dialog-wrapper-body">
+            <ng-content select="[body]"></ng-content>
+        </div>
+        <hr/>
+        <div class="dialog-wrapper-footer">
+            <ng-content select="[footer]"></ng-content>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="action-panel">
+    <div class="w3-center">
+        <h2 class="no-margin">Actions</h2>
+        <hr/>
+        <div class="action-button-list">
+            <div>
+                <button class="btn btn-orange" (click)="openBranchManagerDialog()">Manage branches</button>
+                <button (click)="pushChanges()" class="btn btn-orange">Push</button>
+            </div>
+            <div>
+                <button (click)="pullDialog.open()" class="btn btn-orange">Pull</button>
+                <button (click)="commitChanges()" class="btn btn-orange">Commit</button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div *ngIf="currentBranch" class="vertical-flex">
+        <div class="action-list">
+            <h5>Local Changes ({{ currentBranch.name }})</h5>
+            <div *ngFor="let change of localChanges" class="text-short">
+               {{ change | todoEventDetails }}
+            </div>
+        </div>
+    
+        <div class="action-list">
+            <h5>Commited changes ({{ currentBranch.name }})</h5>
+            <div class="commit-list">
+                <div *ngFor="let commit of localCommits">
+                    <span class="commit-info w3-black">
+                        Commit: {{ commit.id }}
+                    </span>
+                    <span class="commit-info w3-green">
+                        No of changes: {{ commit.events.length }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-branch-manager-dialog #branchManagerDialog></app-branch-manager-dialog>
+<app-pull-dialog #pullDialog></app-pull-dialog>

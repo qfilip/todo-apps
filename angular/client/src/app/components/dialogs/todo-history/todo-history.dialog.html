@@ -1,0 +1,39 @@
+<app-wrapper-dialog #dialogWrapper title="Todo History">
+    <div body *ngIf="dialogWrapper.isVisible">
+        <div class="w3-row">
+            <div *ngIf="todoCommits" class="w3-twothird">
+                <h4>Commits</h4>
+                <div class="scrollable">
+                    <div *ngFor="let c of todoCommits">
+                        <details>
+                            <summary class="commit-summary">
+                                Commit {{ c.id }} at <time>{{ c.createdAt }}</time>
+                            </summary>
+                            <div
+                                *ngFor="let event of c.events"
+                                (click)="onEventSelected(c.id, event.id)"
+                                class="commit-details">
+                                {{ event | todoEventDetails }}
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="todoProjection" class="w3-third">
+                <h4 class="w3-center">Snapshot preview</h4>
+                <div class="flex-centered">
+                    <div>
+                        <h5 class="no-margin">{{ todoProjection.title }}</h5>
+                        <article>{{ todoProjection.details }}</article>
+                        <time>{{ todoProjection.dueDate | formatDate }}</time>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div footer>
+        
+    </div>
+</app-wrapper-dialog>

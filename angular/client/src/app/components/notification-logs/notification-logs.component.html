@@ -1,0 +1,18 @@
+<div class="notification-drawer w3-light-grey" [ngClass]="{ 'open' : isOpen}">
+    <button (click)="toggleDrawer()" class="drawer-toggler btn btn-grey">notifications</button>
+    <div class="notification-list" [ngClass]="{ 'notification-list-hidden' : !isOpen}">
+        <div *ngFor="let x of notes">
+            <span class="info-span" [ngClass]="{
+                'w3-text-green' : x.note.type === _eNoteType.Success,
+                'w3-text-blue' : x.note.type === _eNoteType.Info,
+                'w3-text-yellow' : x.note.type === _eNoteType.Warning,
+                'w3-text-red' : x.note.type === _eNoteType.Error
+            }">
+                {{ x.note.message }}
+            </span>
+            <span class="info-span">
+                Logged at: {{ x.at }}
+            </span>
+        </div>
+    </div>
+</div>

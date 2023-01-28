@@ -1,0 +1,22 @@
+<div class="todos-component">
+    <div class="w3-center">
+        <h2 class="no-margin">Todos</h2>
+        <hr/>
+    </div>
+    <div *ngIf="todos" class="todo-list">
+        <div *ngFor="let todo of todos;">
+            <app-todo
+                [todo]="todo"
+                (onEdit)="openEditTodoDialog($event)"
+                (onDelete)="openDeleteTodoDialog($event)"
+                (onViewHistory)="openTodoHistoryDialog($event)">
+            </app-todo>
+        </div>
+    </div>
+    <hr class="no-margin"/>
+    <button (click)="openAddTodoDialog()" class="at-bottom btn btn-green">Add Todo</button>
+</div>
+
+<app-add-todo-dialog #addTodoDialog></app-add-todo-dialog>
+<app-edit-todo-dialog #editTodoDialog></app-edit-todo-dialog>
+<app-todo-history-dialog #todoHistoryDialog></app-todo-history-dialog>

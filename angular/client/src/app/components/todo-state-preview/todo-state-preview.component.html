@@ -1,0 +1,14 @@
+<div *ngIf="preview">
+    <h5>
+        {{ preview.todo.title }}
+    </h5>
+    <article>
+        {{ preview.todo.details }}
+    </article>
+    <time>
+        {{ preview.todo.dueDate | formatDate }}
+    </time>
+    <div>
+        State: {{ preview.state }}
+    </div>
+</div>

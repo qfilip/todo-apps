@@ -1,0 +1,132 @@
+{
+  "branches": [
+    {
+      "id": "a8057698",
+      "name": "alice",
+      "entityState": 1
+    },
+    {
+      "id": "294c5385",
+      "name": "bob",
+      "entityState": 1
+    }
+  ],
+  "commits": [
+    {
+      "id": "ee04c56d",
+      "branchId": "a8057698",
+      "events": [
+        {
+          "id": "e1513665",
+          "type": 1,
+          "todo": {
+            "id": "56859d8c",
+            "title": "Todo 1",
+            "details": "",
+            "dueDate": "2022-03-31T23:35:30.091Z"
+          },
+          "createdAt": "2022-03-31T23:35:35.060Z"
+        },
+        {
+          "id": "414f59d3",
+          "type": 1,
+          "todo": {
+            "id": "49a859fc",
+            "title": "Todo 2",
+            "details": "",
+            "dueDate": "2022-03-31T23:35:37.069Z"
+          },
+          "createdAt": "2022-03-31T23:35:41.008Z"
+        },
+        {
+          "id": "9245d433",
+          "type": 1,
+          "todo": {
+            "id": "ca807784",
+            "title": "Todo 3",
+            "details": "",
+            "dueDate": "2022-03-31T23:35:47.410Z"
+          },
+          "createdAt": "2022-03-31T23:35:53.046Z"
+        }
+      ],
+      "createdAt": "2022-03-31T23:36:06.137Z"
+    },
+    {
+      "id": "78d1993b",
+      "branchId": "a8057698",
+      "events": [
+        {
+          "id": "aea013a5",
+          "todoId": "56859d8c",
+          "details": "Some description",
+          "type": 4,
+          "createdAt": "2022-03-31T23:36:37.183Z"
+        },
+        {
+          "id": "2e616edd",
+          "todoId": "ca807784",
+          "type": 2,
+          "createdAt": "2022-03-31T23:36:47.908Z"
+        },
+        {
+          "id": "cb60f097",
+          "todoId": "56859d8c",
+          "dueDate": "2022-04-09",
+          "type": 5,
+          "createdAt": "2022-03-31T23:36:54.678Z"
+        }
+      ],
+      "createdAt": "2022-03-31T23:37:00.286Z"
+    },
+    {
+      "id": "c8707b9f",
+      "branchId": "a8057698",
+      "events": [
+        {
+          "id": "7f6de199",
+          "todoId": "56859d8c",
+          "details": "Edited description",
+          "type": 4,
+          "createdAt": "2022-03-31T23:37:20.874Z"
+        }
+      ],
+      "createdAt": "2022-03-31T23:37:26.321Z"
+    },
+    {
+      "id": "a692094a",
+      "branchId": "a8057698",
+      "events": [
+        {
+          "id": "0fee7171",
+          "todoId": "49a859fc",
+          "details": "Another edited description",
+          "type": 4,
+          "createdAt": "2022-03-31T23:37:39.671Z"
+        },
+        {
+          "id": "0c7b5f97",
+          "todoId": "49a859fc",
+          "dueDate": "2022-04-27",
+          "type": 5,
+          "createdAt": "2022-03-31T23:37:39.671Z"
+        }
+      ],
+      "createdAt": "2022-03-31T23:37:42.750Z"
+    },
+    {
+      "id": "8949c4d3",
+      "branchId": "a8057698",
+      "events": [
+        {
+          "id": "eec96f30",
+          "todoId": "56859d8c",
+          "dueDate": "2022-04-23",
+          "type": 5,
+          "createdAt": "2022-04-01T00:08:33.706Z"
+        }
+      ],
+      "createdAt": "2022-04-01T00:08:36.744Z"
+    }
+  ]
+}

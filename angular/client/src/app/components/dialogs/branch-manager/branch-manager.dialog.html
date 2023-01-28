@@ -1,0 +1,69 @@
+<app-wrapper-dialog #dialogWrapper title="Manage branches">
+    <div body *ngIf="dialogWrapper.isVisible">
+        <div class="w3-row">
+
+            <div class="w3-col l2 m2">
+                <h4>Branch</h4>
+                <hr/>
+                <select *ngIf="branches" (change)="setSelectedBranch($event)">
+                    <option *ngFor="let branch of branches" [value]="branch.id" [selected]="branch.id === selectedBranch.id">
+                        {{ branch.name }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="w3-col l5 m5">
+                <h4>Details</h4>
+                <hr/>
+                <div class="w3-row">
+                    <div class="w3-twothird">
+                        State
+                    </div>
+                    <div class="w3-third">
+                        {{ _entityState[selectedBranch.entityState] }}
+                    </div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-twothird">
+                        No. of commits
+                    </div>
+                    <div class="w3-third">
+                        {{ branchCommits.length }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-col l5 m5">
+                <h4>Actions</h4>
+                <hr/>
+                <div class="w3-row">
+                    <div class="w3-col l2 m2">
+                        Name:
+                    </div>
+                    <div class="w3-col l8 m8">
+                        <input [(ngModel)]="selectedBranch.name" />
+                    </div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col l2 m2">
+                        Active:
+                    </div>
+                    <div class="w3-col l8 m8">
+                        <input 
+                            [(ngModel)]="selectedBranchIsActive"
+                            (change)="toggleBranchIsActive($event)"
+                            type="checkbox" />
+                    </div>
+                </div>
+                <div class="action-buttons w3-col l2 m2">
+                    <button (click)="createBranch()" class="btn btn-orange">Create branch</button>
+                    <button (click)="updateBranch()" class="btn btn-orange">Update branch</button>
+                    <button (click)="cloneBranch()" class="btn btn-orange">Clone branch</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div footer>
+        <button (click)="dialogWrapper.close()" class="btn btn-orange">Close</button>
+    </div>
+</app-wrapper-dialog>

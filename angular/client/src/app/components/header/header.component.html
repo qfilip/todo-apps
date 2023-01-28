@@ -1,0 +1,13 @@
+<div class="header w3-black">
+    <h1>
+        Todo App
+    </h1>
+    <div>
+        <span>Branch: </span>
+        <select *ngIf="currentbranch" (change)="onBranchSelected($event)">
+            <option *ngFor="let branch of branches" [value]="branch.id" [selected]="branch.id === currentbranch.id">
+                {{ branch.name }}
+            </option>
+        </select>
+    </div>
+</div>

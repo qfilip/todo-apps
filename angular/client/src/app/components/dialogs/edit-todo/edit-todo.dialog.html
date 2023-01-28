@@ -1,0 +1,20 @@
+<app-wrapper-dialog #dialogWrapper title="Edit Todo">
+    <div body>
+        <div class="w3-row">
+            <div class="w3-quarter">Title:</div>
+            <input [(ngModel)]="todo.title" placeholder="Add title..." class="w3-threequarter" />
+        </div>
+        <div class="w3-row">
+            <div class="w3-quarter">Details:</div>
+            <textarea [(ngModel)]="todo.details" placeholder="Add details..." class="w3-threequarter"></textarea>
+        </div>
+        <div class="w3-row">
+            <div class="w3-quarter">Due date</div>
+            <input [(ngModel)]="todo.dueDate" type="date">
+        </div>
+    </div>
+    <div footer>
+        <button (click)="onSave()" class="btn btn-orange">Save</button>
+        <button (click)="close()" class="btn btn-orange">Cancel</button>
+    </div>
+</app-wrapper-dialog>

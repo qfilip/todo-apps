@@ -1,0 +1,25 @@
+.scrollable {
+    max-height: 7rem;
+    overflow-y: auto;
+}
+
+.commit-summary {
+    cursor: pointer;
+    &:hover {
+        background-color: lightblue;
+    }
+}
+
+.commit-details {
+    cursor: pointer;
+    padding-left: 1rem;
+    &:hover {
+        background-color: aquamarine;
+    }
+}
+
+.flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
