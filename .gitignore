@@ -8,6 +8,7 @@
 
 # Node
 *node_modules/
+*.vscode/
 database/node_modules
 todo-client/node_modules
 todo-client/.angular
