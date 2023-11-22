@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./todo.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todos</h1>
+    
+    <dialog id="todo-dialog">
+        <fieldset>
+            <legend id="todo-legend"></legend>
+            <div class="form-group">
+                <label for="todo-title">Title</label>
+                <input id="todo-title" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="todo-description">Description</label>
+                <input id="todo-description" type="text" />
+            </div>
+            <div id="todo-errors"></div>
+            <div class="dialog-buttons">
+                <button id="dialog-ok-btn" onclick="DomHandler.dialog.open()"></button>
+                <button onclick="DomHandler.dialog.close()">Close</button>
+            </div>
+        </fieldset>
+    </dialog>
+    
+    <dialog id="todo-history-dialog">
+        <fieldset>
+            <legend id="todo-history-legend"></legend>
+            <div id="todo-history-todo"></div>
+        </fieldset>
+        <button onclick="DomHandler.historyDialog.close()">Close</button>
+    </dialog>
+    
+    <main>
+        <button onclick="TodoFns.openCreateTodoDialog()">Create todo</button>
+        <section id="todo-list"></section>
+    </main>
+    
+    <script src="./scripts/utils.js"></script>
+    <script src="./scripts/appState.js"></script>
+    <script src="./scripts/domHandler.js"></script>
+    <script src="./scripts/todoFns.js"></script>
+</body>
+</html>

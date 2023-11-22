@@ -1,0 +1,51 @@
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin: 0rem;
+}
+
+dialog {
+    border: none;
+    box-shadow: 1px 1px 5px black;
+}
+
+main {
+    width: 50%;
+    margin: auto;
+}
+
+button {
+    margin: .2rem;
+    width: 100%;
+}
+
+time {
+    font-size: xx-small;
+}
+
+.form-group > input {
+    width: 100%;
+}
+
+.dialog-buttons {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.dialog-buttons > button {
+    width: 30%;
+}
+
+.todo {
+    margin: .2rem;
+    padding: .2rem;
+    border: 2px solid black;
+}
+
+.todo-error {
+    color: red;
+}
